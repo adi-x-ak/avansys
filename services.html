@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Consultancy Firm - Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .service-section {
+            padding: 4rem 0;
+            background-color: #f9f9f9;
+        }
+        .service-item {
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        .service-item img {
+            width: 50px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<!-- Navbar -->
+<nav class="p-6 bg-gray-900 text-white fixed w-full top-0 z-10 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">IT Consultancy</h1>
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+            
+            <li><a href="history.html" class="hover:text-blue-500">Projects</a></li>
+            <li><a href="services.html" class="hover:text-blue-500">Services</a></li>
+        </ul>
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div v-if="mobileMenuOpen" class="md:hidden bg-gray-800 text-white p-4 space-y-4">
+        <a href="index.html" class="block hover:text-blue-500">Home</a>
+        <a href="usp.html" class="block hover:text-blue-500">USP</a>
+        <a href="history.html" class="block hover:text-blue-500">Projects</a>
+        <a href="services.html" class="block hover:text-blue-500">Services</a>
+    </div>
+</nav>
+
+<body>
+    <div id="app">
+        <!-- Services Section -->
+        <section id="services" class="service-section" style="padding-top: 120px">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12">Our Services</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-item bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                        <img src="cloud-icon.svg" alt="Cloud Services">
+                        <h3 class="text-xl font-semibold">Cloud Solutions</h3>
+                        <p class="mt-4 text-gray-600">Comprehensive cloud services, including cloud migration, architecture, and infrastructure optimization.</p>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                        <img src="security-icon.svg" alt="Cybersecurity">
+                        <h3 class="text-xl font-semibold">Cybersecurity</h3>
+                        <p class="mt-4 text-gray-600">Advanced cybersecurity services to protect your business from data breaches and cyber threats.</p>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                        <img src="analytics-icon.svg" alt="Data Analytics">
+                        <h3 class="text-xl font-semibold">Data Analytics</h3>
+                        <p class="mt-4 text-gray-600">Leverage data insights to drive business decisions with our state-of-the-art data analytics solutions.</p>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                        <img src="ai-icon.svg" alt="AI Solutions">
+                        <h3 class="text-xl font-semibold">AI & Machine Learning</h3>
+                        <p class="mt-4 text-gray-600">Harness the power of artificial intelligence to automate processes and enhance decision-making.</p>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                        <img src="consulting-icon.svg" alt="Consulting">
+                        <h3 class="text-xl font-semibold">IT Consulting</h3>
+                        <p class="mt-4 text-gray-600">Expert consulting services to guide your business through technological transformation.</p>
+                    </div>
+                    <div class="service-item bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                        <img src="development-icon.svg" alt="Software Development">
+                        <h3 class="text-xl font-semibold">Custom Software Development</h3>
+                        <p class="mt-4 text-gray-600">End-to-end software development tailored to your business needs, from concept to deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+        });
+    </script>
+</body>
+</html>

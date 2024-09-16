@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Consultancy Firm</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .hero {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-text {
+            padding-left: 5%;
+            width: 50%; /* Occupy half of the width */
+        }
+
+        .hero-image {
+            width: 50%; /* Occupy half of the width */
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            opacity: 0.7; /* Make the image blend with the background */
+        }
+
+        .scroll-down {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: black;
+        }
+
+        .scroll-down:hover {
+            color: #007AFF;
+        }
+
+        .usp-section {
+            background-color: #f9f9f9;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .usp-item {
+            margin-bottom: 2rem;
+        }
+        .usp-item h3 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .usp-item p {
+            font-size: 1.2rem;
+            color: #6B7280;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Navbar -->
+        <nav class="p-6 bg-gray-900 text-white fixed w-full top-0 z-10 shadow-lg">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-3xl font-bold">IT Consultancy</h1>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+                    
+                    <li><a href="history.html" class="hover:text-blue-500">Projects</a></li>
+                    <li><a href="services.html" class="hover:text-blue-500">Services</a></li>
+                </ul>
+                <!-- Mobile Menu -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Left Side (Text) -->
+                <div class="hero-text text-left w-1/2">
+                    <h2 class="text-5xl font-semibold">Transforming IT Solutions</h2>
+                    <p class="mt-4 text-xl">Innovative, Scalable, and Reliable</p>
+                    <div class="scroll-down" @click="scrollTo('#usp')">↓ Scroll Down</div>
+                </div>
+        
+                <!-- Right Side (Image) -->
+                <div class="hero-image w-1/2">
+                    <img src="hero-bg3.webp" alt="Illustration" class="opacity-70 object-cover">
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- USP Section -->
+        <section id="usp" class="usp-section">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-8">Why Choose Us?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="usp-item">
+                        <h3>Expert IT Solutions</h3>
+                        <p>We provide cutting-edge solutions for businesses of all sizes, leveraging modern technologies to deliver results.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h3>Scalable Infrastructure</h3>
+                        <p>Our services are designed to grow with your business, offering flexibility and scalability to adapt to your needs.</p>
+                    </div>
+                    <div class="usp-item">
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock support from our dedicated team ensures your business stays online and operational at all times.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                mobileMenuOpen: false
+            },
+            methods: {
+                scrollTo(selector) {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        window.scrollTo({
+                            top: element.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
